@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  url: 'https://paulolc.online',
+  url: 'https://paulolc.pt',
   title: 'The Aspiring Software Craftsman',
   subtitle: 'From someone who loves to write software',
   icon: 'static/photo.png',
@@ -28,7 +28,7 @@ module.exports = {
     photo: '/photo.png',
     bio: 'Dad. Forever aspiring Software Craftsman. Probable Hacker. Wannabe Maker. Possible Tinkerer. CoderDojo Champion. ',
     contacts: {
-      email: 'paulolc@futurix.pt',
+      email: 'plc@sdf.org',
       twitter: 'paulolc',
       github: 'paulolc'
     }
