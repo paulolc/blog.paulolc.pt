@@ -10,4 +10,4 @@
     [headers.values]
     Access-Control-Allow-Origin = "*"
 [[plugins]]
-  package = "@netlify/plugin-gatsby@1.0.3"
+  package = "@netlify/plugin-gatsby"
