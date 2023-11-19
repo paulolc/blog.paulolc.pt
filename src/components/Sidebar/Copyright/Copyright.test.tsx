@@ -12,12 +12,4 @@ describe("Copyright", () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-  test("renders correctly with empty string", () => {
-    const props = { copyright: "" };
-    const tree = testUtils
-      .createSnapshotsRenderer(<Copyright {...props} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
 });

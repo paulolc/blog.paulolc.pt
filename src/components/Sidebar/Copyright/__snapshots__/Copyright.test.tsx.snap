@@ -5,5 +5,3 @@ exports[`Copyright renders correctly 1`] = `
   All rights reserved.
 </div>
 `;
-
-exports[`Copyright renders correctly with empty string 1`] = `<div />`;

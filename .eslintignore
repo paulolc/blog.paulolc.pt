@@ -1,4 +1,3 @@
-*.*
-!*.ts
-!*.tsx
-/public/
+/flow-typed/*
+/public/*
+/node_modules/*
