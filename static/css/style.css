@@ -216,3 +216,17 @@ pre code{background:none;padding:0}
 .archive-tag{margin:8px 0 2px}
 .archive-tag>a{font-weight:600}
 .archive-count{color:var(--color-muted);font-size:12px}
+.archive-flat{padding-left:2px}
+.articles-page{max-width:640px}
+.articles-title{font-size:27px;font-weight:600;margin:0 0 8px}
+.articles-heading{margin:26px 0 6px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-secondary)}
+.articles-year{font-size:20px;font-weight:600;margin:18px 0 4px}
+.articles-month{color:var(--color-muted);margin:12px 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+.articles-category{font-size:17px;font-weight:600;margin:16px 0 4px}
+.articles-category a{color:var(--color-base);border:0}
+.articles-category a:hover{color:var(--color-primary)}
+.articles-list{list-style:none;margin:0 0 8px;padding:0}
+.articles-list li{margin:5px 0;line-height:1.5}
+.articles-list a{color:var(--color-base);border:0}
+.articles-list a:hover{color:var(--color-primary)}
+.articles-date{color:var(--color-muted);font-size:13px;margin-right:6px;white-space:nowrap}

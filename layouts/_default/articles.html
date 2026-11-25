@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="articles-page">
+  <h1 class="articles-title">{{ .Title }}</h1>
+  {{ $posts := sort (where .Site.RegularPages "Section" "posts") "Date" "desc" }}
+  <h2 class="articles-heading">By date</h2>
+  {{ range $posts.GroupByDate "2006" }}
+  {{ $year := .Key }}
+  <h3 class="articles-year">{{ .Key }}</h3>
+  {{ range .Pages.GroupByDate "January" }}
+  <h4 class="articles-month" id="{{ printf "%s-%s" (.Key | lower) $year }}">{{ .Key }}</h4>
+  <ul class="articles-list">
+    {{ range .Pages }}<li><span class="articles-date">{{ .Date.Format "Jan 2, 2006" }}</span> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+  </ul>
+  {{ end }}
+  {{ end }}
+  <h2 class="articles-heading">By category</h2>
+  {{ range .Site.Taxonomies.categories.Alphabetical }}
+  <h3 class="articles-category"><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> <span class="archive-count">({{ .Count }})</span></h3>
+  <ul class="articles-list">
+    {{ range sort .Pages "Date" "desc" }}<li><span class="articles-date">{{ .Date.Format "Jan 2, 2006" }}</span> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+  </ul>
+  {{ end }}
+</div>
+{{ end }}

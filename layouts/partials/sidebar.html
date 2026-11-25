@@ -18,22 +18,13 @@
               <p class="archive-latest"><a href="/">Latest articles</a></p>
               {{ $posts := sort (where $.Site.RegularPages "Section" "posts") "Date" "desc" }}
               <h4 class="archive-heading">By date</h4>
-              {{ range $posts.GroupByDate "2006" }}
-              <div class="archive-year">{{ .Key }}</div>
-              {{ range .Pages.GroupByDate "January" }}
-              <div class="archive-month">{{ .Key }}</div>
-              <ul class="archive-list">
-                {{ range .Pages }}<li><span class="archive-day">{{ .Date.Format "2" }}</span> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+              <ul class="archive-list archive-flat">
+                {{ range $posts.GroupByDate "2006-01" }}<li><a href="/articles/#{{ (index .Pages 0).Date.Format "January" | lower }}-{{ (index .Pages 0).Date.Format "2006" }}">{{ (index .Pages 0).Date.Format "January 2006" }}</a> <span class="archive-count">({{ len .Pages }})</span></li>{{ end }}
               </ul>
-              {{ end }}
-              {{ end }}
-              <h4 class="archive-heading">By tag</h4>
-              {{ range $.Site.Taxonomies.tags.Alphabetical }}
-              <div class="archive-tag"><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> <span class="archive-count">({{ .Count }})</span></div>
-              <ul class="archive-list">
-                {{ range sort .Pages "Date" "desc" }}<li><span class="archive-day">{{ .Date.Format "2006-01-02" }}</span> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+              <h4 class="archive-heading">By category</h4>
+              <ul class="archive-list archive-flat">
+                {{ range $.Site.Taxonomies.categories.Alphabetical }}<li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> <span class="archive-count">({{ .Count }})</span></li>{{ end }}
               </ul>
-              {{ end }}
             </div>
           </details>
         </li>
