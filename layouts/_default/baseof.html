@@ -12,11 +12,19 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ . }}');</script>
 {{ end }}
+{{ hugo.Generator }}
 </head>
 <body>
-<div class="wrapper">
+{{ if and (eq .Kind "page") (eq .Section "posts") }}
+<div class="post-layout">
+  <div class="post-buttons"><a class="button" href="/">All Articles</a></div>
+  <main>{{ block "main" . }}{{ end }}</main>
+</div>
+{{ else }}
+<div class="layout">
 {{ partial "sidebar.html" . }}
 <main class="content">{{ block "main" . }}{{ end }}</main>
 </div>
+{{ end }}
 </body>
 </html>

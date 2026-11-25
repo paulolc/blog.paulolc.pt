@@ -1,11 +1,26 @@
 {{ define "main" }}
+{{ if eq .Section "posts" }}
 <article class="post">
-  <h1>{{ .Title }}</h1>
-  {{ if eq .Section "posts" }}
-  <p class="meta">{{ .Date.Format "January 2, 2006" }}
-  {{ with .Params.categories }} · {{ range . }}<a href="/category/{{ . | urlize }}/">{{ . }}</a> {{ end }}{{ end }}
-  {{ with .Params.tags }} · {{ range . }}<a href="/tag/{{ . | urlize }}/">#{{ . }}</a> {{ end }}{{ end }}</p>
-  {{ end }}
+  <h1 class="post-title">{{ .Title }}</h1>
   <div class="post-body">{{ .Content }}</div>
+  <div class="post-footer">
+    {{ with .Params.tags }}
+    <div class="post-tags">
+      <ul>{{ range . }}<li><a class="button" href="/tag/{{ . | urlize }}/">{{ . }}</a></li>{{ end }}</ul>
+    </div>
+    {{ end }}
+    <p class="post-meta-date">Published {{ .Date.Format "Jan 2, 2006" }}</p>
+    <div class="post-author">
+      <p>{{ .Site.Params.author.bio }}
+        <a class="twitter-link" href="https://www.twitter.com/{{ .Site.Params.author.twitter }}" rel="noopener noreferrer" target="_blank"><strong>{{ .Site.Params.author.name }}</strong> on Twitter</a>
+      </p>
+    </div>
+  </div>
 </article>
+{{ else }}
+<article class="page">
+  <h1 class="page-title">{{ .Title }}</h1>
+  <div class="page-body">{{ .Content }}</div>
+</article>
+{{ end }}
 {{ end }}

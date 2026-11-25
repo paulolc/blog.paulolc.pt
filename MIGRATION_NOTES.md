@@ -176,3 +176,25 @@ files overlaid) builds with Hugo 0.170.1 in ~54 ms, all live URLs preserved,
 exists in the repo at the correct bundle paths and is unchanged.
 A later cleanup (deleting the Gatsby files) requires a regular git push and
 is NOT required for the Hugo build or the Netlify Deploy Preview.
+
+## Theme approximation (2026-11-25, second push)
+
+The first preview's generic styling was replaced with a close approximation
+of the live Lumen theme. Design tokens and structure were extracted from the
+live site's own stylesheet and HTML (paulolc.pt, 2026-11-25):
+- Colors: primary #5c92ff (blue), secondary #f7a145 (orange), base text
+  #242933, muted #7f8ba4, borders #eaeaeb; system font stack, 16px/26px.
+- Sidebar layout (max-width 1070px): 75px round author photo, 18px/600 name,
+  grey bio, black menu links (blue underline on hover, black underline when
+  active), contacts as 40px circular icon buttons using the live site's own
+  SVG icon paths (email, github, twitter, facebook, linkedin, telegram,
+  instagram, mastodon), gradient vertical divider.
+- Feed: "MONTH YEAR · CATEGORY" meta (category orange, uppercase, 600),
+  27px titles, description, blue "Read" link, no separators;
+  pagination "← PREV / → NEXT" in bold 26px orange.
+- Single posts: no sidebar — centered 32px/600 title, body max-width 640px,
+  fixed "All Articles" pill button top-left, footer with Published date,
+  tag pills, and the author bio box with Twitter link.
+Known differences from Lumen: no dark-mode toggle (Lumen ships one; the
+live site defaults to light), contact email is a real mailto link instead of
+Lumen's obfuscated span, pagination URLs are Hugo-style /page/2/.
