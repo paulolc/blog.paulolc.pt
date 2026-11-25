@@ -196,3 +196,23 @@ pre code{background:none;padding:0}
 
 /* ---------- 404 ---------- */
 .notfound{text-align:center;padding-top:52px}
+
+/* ---------- sidebar: articles archive ---------- */
+.articles-archive summary{list-style:none;cursor:pointer;color:var(--color-base);font-size:16px;display:flex;align-items:center;gap:6px}
+.articles-archive summary::-webkit-details-marker{display:none}
+.articles-archive summary:hover{color:var(--color-primary)}
+.archive-caret{font-size:11px;color:var(--color-muted);transition:transform .15s ease}
+.articles-archive[open ] .archive-caret{transform:rotate(180deg)}
+.archive{margin:10px 0 4px;padding-left:2px;font-size:13.5px;line-height:1.45}
+.archive a{border:0;color:var(--color-base)}
+.archive a:hover{color:var(--color-primary)}
+.archive-latest{margin:0 0 10px;font-size:14px}
+.archive-heading{margin:14px 0 6px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-secondary)}
+.archive-year{font-weight:600;margin:8px 0 2px}
+.archive-month{color:var(--color-muted);margin:6px 0 2px 8px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
+.archive-list{list-style:none;margin:0 0 4px;padding:0 0 0 16px}
+.archive-list li{margin:3px 0}
+.archive-day{color:var(--color-muted);font-size:12px}
+.archive-tag{margin:8px 0 2px}
+.archive-tag>a{font-weight:600}
+.archive-count{color:var(--color-muted);font-size:12px}
