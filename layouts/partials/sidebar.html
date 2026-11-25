@@ -1,0 +1,15 @@
+<aside class="sidebar">
+  <img class="author-photo" src="{{ .Site.Params.author.photo }}" alt="{{ .Site.Params.author.name }}">
+  <h2 class="author-name"><a href="/">{{ .Site.Params.author.name }}</a></h2>
+  <p class="author-bio">{{ .Site.Params.author.bio }}</p>
+  <nav class="menu"><ul>
+    {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+  </ul></nav>
+  <p class="contacts">
+    <a href="mailto:{{ .Site.Params.author.email }}">Email</a> ·
+    <a href="https://twitter.com/{{ .Site.Params.author.twitter }}">Twitter</a> ·
+    <a href="https://github.com/{{ .Site.Params.author.github }}">GitHub</a> ·
+    <a href="/rss.xml">RSS</a>
+  </p>
+  <p class="copyright">{{ .Site.Params.copyright }}</p>
+</aside>

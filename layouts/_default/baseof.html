@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.subtitle }}{{ end }}">
+<meta name="theme-color" content="hsl(31, 92%, 62%)">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/rss.xml">
+{{ with .Site.Params.googleAnalyticsId }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ . }}');</script>
+{{ end }}
+</head>
+<body>
+<div class="wrapper">
+{{ partial "sidebar.html" . }}
+<main class="content">{{ block "main" . }}{{ end }}</main>
+</div>
+</body>
+</html>

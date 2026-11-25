@@ -1,0 +1,64 @@
+# Decap CMS for paulolc.pt — edits are Git commits via Netlify Git Gateway.
+# Requires (later, on Netlify): Identity enabled + Git Gateway enabled,
+# and registration/invite for the editor user. See MIGRATION_NOTES.md.
+backend:
+  name: git-gateway
+  branch: master
+
+# Allow `npx decap-server` / local editing workflow during development.
+local_backend: true
+
+publish_mode: simple
+
+# Default upload location for images added outside a post bundle.
+# Limitation: Decap cannot upload into an individual post's leaf-bundle
+# media/ folder per-entry; uploads here land in static/media and are
+# referenced as /media/<file>. Existing bundle media is untouched.
+media_folder: "static/media"
+public_folder: "/media"
+
+site_url: https://paulolc.pt
+display_url: https://paulolc.pt
+
+collections:
+  - name: posts
+    label: Posts
+    folder: content/posts
+    # Create leaf bundles (folder + index.md) like the existing posts.
+    path: "{{slug}}/index"
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string, hint: "URL slug. Published URL is /<slug> via the url field — keep in sync." }
+      - { label: URL override, name: url, widget: string, required: false, hint: "e.g. /my-post — set to / + slug for new posts." }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false, hint: "Stored via categories mapping in Hugo frontmatter migration; see notes." }
+      - { label: Categories, name: categories, widget: list, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: true }
+      - { label: Body, name: body, widget: markdown }
+  - name: pages
+    label: Pages
+    editor:
+      preview: false
+    files:
+      - name: about
+        label: About me
+        file: content/pages/about.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL, name: url, widget: string, default: "/pages/about/" }
+          - { label: Body, name: body, widget: markdown }
+      - name: contacts
+        label: Contact me
+        file: content/pages/contacts.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL, name: url, widget: string, default: "/pages/contacts/" }
+          - { label: Body, name: body, widget: markdown }

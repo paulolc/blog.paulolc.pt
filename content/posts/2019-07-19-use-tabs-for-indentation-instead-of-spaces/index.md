@@ -3,12 +3,12 @@ template: post
 title: Use tabs for indentation instead of spaces.
 slug: use-tabs-for-indentation-instead-of-spaces
 draft: false
-date: 2019-07-19T07:54:16.489Z
-description: >-
-  Several online discussions about the reasons you should use tabs instead of
-  spaces for indentation.
-category: coding
-socialImage: 
+date: 2019-07-19 07:54:16.489000+00:00
+description: Several online discussions about the reasons you should use tabs instead of spaces for indentation.
+socialImage: null
+url: /use-tabs-for-indentation-instead-of-spaces
+categories:
+- coding
 ---
 Accessibility. Accessibility is the real reason you must use tabs instead of spaces for indentation.  
 

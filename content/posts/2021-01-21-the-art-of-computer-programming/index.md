@@ -3,10 +3,12 @@ template: post
 title: The Art of Computer Programming
 slug: the-art-of-computer-programming
 draft: true
-date: 2020-06-24T09:45:33.920Z
+date: 2020-06-24 09:45:33.920000+00:00
 description: Thoughts and ideas that occurred to me while reading this book
-category: notes
-socialImage: 
+socialImage: null
+url: /the-art-of-computer-programming
+categories:
+- notes
 ---
 The Art of Computer Programming is a set of books by Donald Knuth, a notable computer scientist.
 

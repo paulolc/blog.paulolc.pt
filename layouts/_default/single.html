@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="post">
+  <h1>{{ .Title }}</h1>
+  {{ if eq .Section "posts" }}
+  <p class="meta">{{ .Date.Format "January 2, 2006" }}
+  {{ with .Params.categories }} · {{ range . }}<a href="/category/{{ . | urlize }}/">{{ . }}</a> {{ end }}{{ end }}
+  {{ with .Params.tags }} · {{ range . }}<a href="/tag/{{ . | urlize }}/">#{{ . }}</a> {{ end }}{{ end }}</p>
+  {{ end }}
+  <div class="post-body">{{ .Content }}</div>
+</article>
+{{ end }}

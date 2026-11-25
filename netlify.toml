@@ -1,0 +1,14 @@
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.170.1"
+  HUGO_ENV = "production"
+
+[context.production.environment]
+  HUGO_ENABLEGITINFO = "true"
+
+# Decap CMS at /admin/ additionally requires, in the Netlify UI (not code):
+#   Identity: enable  |  Identity > Services: enable Git Gateway
+#   Identity: registration set to Invite only, invite the editor.

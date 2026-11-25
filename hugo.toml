@@ -1,0 +1,62 @@
+baseURL = "https://paulolc.pt/"
+title = "The Aspiring Software Craftsman"
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 4
+
+[params]
+  subtitle = "From someone who loves to write software"
+  copyright = "© All rights reserved."
+  googleAnalyticsId = "G-P5VY49XL4L"
+  postsPerPage = 4
+  [params.author]
+    name = "Paulo Carvalho"
+    photo = "/photo.png"
+    bio = "Dad. Forever aspiring Software Craftsman. Probable Hacker. Wannabe Maker. Possible Tinkerer. CoderDojo Champion."
+    email = "plc@sdf.org"
+    twitter = "paulolc"
+    github = "paulolc"
+
+[[menus.main]]
+  name = "Articles"
+  url = "/"
+  weight = 1
+[[menus.main]]
+  name = "About me"
+  url = "/pages/about"
+  weight = 2
+[[menus.main]]
+  name = "Contact me"
+  url = "/pages/contacts"
+  weight = 3
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[permalinks]
+  [permalinks.taxonomy]
+    categories = "/category/"
+    tags = "/tag/"
+  [permalinks.term]
+    categories = "/category/:slug"
+    tags = "/tag/:slug"
+
+[outputFormats]
+  [outputFormats.RSS]
+    baseName = "rss"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+  page = ["HTML"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"

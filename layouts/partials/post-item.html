@@ -1,0 +1,5 @@
+<article class="post-item">
+  <p class="meta">{{ .Date.Format "January 2006" }}{{ with .Params.categories }} · <a href="/category/{{ index . 0 | urlize }}/">{{ index . 0 }}</a>{{ end }}</p>
+  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  <p>{{ .Description | default .Summary }}</p>
+</article>
