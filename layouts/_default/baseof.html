@@ -8,6 +8,7 @@
 <meta name="theme-color" content="hsl(31, 92%, 62%)">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/rss.xml">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 {{ with .Site.Params.googleAnalyticsId }}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ . }}');</script>
@@ -28,5 +29,14 @@
 </div>
 {{ end }}
 <script>document.querySelectorAll('[data-theme-toggle]').forEach(function(b){b.addEventListener('click',function(){var dark=document.documentElement.classList.toggle('dark');try{localStorage.setItem('diesel:theme-atom',JSON.stringify({mode:dark?'dark':'light'}));}catch(e){}});});</script>
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', function(user) {
+    if (!user) {
+      window.netlifyIdentity.on('login', function() { document.location.href = '/admin/'; });
+    }
+  });
+}
+</script>
 </body>
 </html>
