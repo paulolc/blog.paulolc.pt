@@ -198,3 +198,18 @@ live site's own stylesheet and HTML (paulolc.pt, 2026-11-25):
 Known differences from Lumen: no dark-mode toggle (Lumen ships one; the
 live site defaults to light), contact email is a real mailto link instead of
 Lumen's obfuscated span, pagination URLs are Hugo-style /page/2/.
+
+## Dark mode toggle (2026-11-25, third push)
+
+Added at Paulo's request, following Lumen's own implementation:
+- Dark palette copied from the live site's `:root.dark` variables
+  (background #242933, text #fff, borders #3f485a, code background #191d24;
+  primary/secondary unchanged).
+- Inline script at the top of <body> applies the theme before first paint:
+  reads localStorage key `diesel:theme-atom` (JSON {"mode": ...}) — the
+  exact key/format Lumen uses, so existing readers' saved preferences carry
+  over — and falls back to `prefers-color-scheme`.
+- Toggle button (sun/moon, crossfading) sits right of the author name in
+  the sidebar (where Lumen's title container leaves space for it) and next
+  to "All Articles" on post pages; clicking flips the `dark` class on
+  <html> and persists the same localStorage key.
