@@ -4,16 +4,15 @@ title: 'Johannes Gutenberg: The Birth of Movable Type'
 slug: /posts/the-birth-of-movable-type/
 draft: true
 date: '2017-08-18T22:12:03.284Z'
-description: >-
-  German inventor Johannes Gutenberg developed a method of movable type and used
-  it to create one of the western world’s first major printed books, the
-  “Forty–Two–Line” Bible.
-category: Typography
+description: German inventor Johannes Gutenberg developed a method of movable type and used it to create one of the western world’s first major printed books, the “Forty–Two–Line” Bible.
 tags:
-  - Open source
-  - Gatsby
-  - Typography
-socialImage: 
+- Open source
+- Gatsby
+- Typography
+socialImage: null
+url: /posts/the-birth-of-movable-type/
+categories:
+- Typography
 ---
 
 German inventor Johannes Gutenberg developed a method of movable type and used it to create one of the western world’s first major printed books, the “Forty–Two–Line” Bible.
@@ -83,7 +82,7 @@ In 1504, he was mentioned as the inventor of typography in a book by Professor I
 
 Gutenberg's early printing process, and what tests he may have made with movable type, are not known in great detail. His later Bibles were printed in such a way as to have required large quantities of type, some estimates suggesting as many as 100,000 individual sorts. Setting each page would take, perhaps, half a day, and considering all the work in loading the press, inking the type, pulling the impressions, hanging up the sheets, distributing the type, etc., it is thought that the Gutenberg–Fust shop might have employed as many as 25 craftsmen.
 
-![Movable metal type, and composing stick, descended from Gutenberg's press. Photo by Willi Heidelbach. Licensed under CC BY 2.5](/media/movable-type.jpg)
+![Movable metal type, and composing stick, descended from Gutenberg's press. Photo by Willi Heidelbach. Licensed under CC BY 2.5](media/movable-type.jpg)
 
 *Movable metal type, and composing stick, descended from Gutenberg's press. Photo by Willi Heidelbach. Licensed under CC BY 2.5*
 

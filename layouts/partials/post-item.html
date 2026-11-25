@@ -1,0 +1,8 @@
+<article class="feed-item">
+  <div class="feed-meta">
+    <time datetime="{{ .Date.Format "January 2, 2006" }}">{{ .Date.Format "January 2006" }}</time>{{ with .Params.categories }}<span class="divider">&middot;</span><span class="category"><a href="/category/{{ index . 0 | urlize }}/">{{ index . 0 }}</a></span>{{ end }}
+  </div>
+  <h2 class="feed-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  <p class="feed-description">{{ .Description | default .Summary }}</p>
+  <a class="feed-more" href="{{ .RelPermalink }}">Read</a>
+</article>

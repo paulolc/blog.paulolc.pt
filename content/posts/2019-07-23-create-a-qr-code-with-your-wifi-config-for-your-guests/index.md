@@ -3,12 +3,12 @@ template: post
 title: Create a QR code with your WIFI config for your guests
 slug: create-a-qr-code-with-your-wifi-config-for-your-guests
 draft: false
-date: 2019-07-23T06:44:48.200Z
-description: >-
-  A special crafted QR code is interpreted by Android and iOS as configuration
-  for a wifi network
-category: tips
-socialImage: 
+date: 2019-07-23 06:44:48.200000+00:00
+description: A special crafted QR code is interpreted by Android and iOS as configuration for a wifi network
+socialImage: null
+url: /create-a-qr-code-with-your-wifi-config-for-your-guests
+categories:
+- tips
 ---
 If you throw a party and you want to conveniently share your guest wifi network details with your guests just create a QR code with the wifi configuration. You could also do this if you own a public place with free-wifi and spare your customers/visitors of the hassle of configuring the wifi. The QR code would do it for them.
 

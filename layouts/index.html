@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $paginator := .Paginate $posts }}
+<div class="feed">
+{{ range $paginator.Pages }}{{ partial "post-item.html" . }}{{ end }}
+</div>
+<nav class="pagination">
+  <div class="prev">{{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}" rel="prev">&larr; PREV</a>{{ else }}<a class="disabled" href="/" rel="prev">&larr; PREV</a>{{ end }}</div>
+  <div class="next">{{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}" rel="next">&rarr; NEXT</a>{{ else }}<a class="disabled" href="/" rel="next">&rarr; NEXT</a>{{ end }}</div>
+</nav>
+{{ end }}

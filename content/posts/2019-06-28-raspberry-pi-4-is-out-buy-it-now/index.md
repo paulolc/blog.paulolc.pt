@@ -1,17 +1,16 @@
 ---
 template: post
 title: Raspberry Pi 4 is out. Buy it. Now.
-slug: >-
-  If you plan to have an informed decision to buy the new Raspberry Pi 4 by
-  looking at the specs first and ponder the pros and cons first. Just don't. You
-  don't need it. Just buy it.
+slug: If you plan to have an informed decision to buy the new Raspberry Pi 4 by looking at the specs first and ponder the pros and cons first. Just don't. You don't need it. Just buy it.
 draft: false
-date: 2019-06-25T15:28:19.819Z
+date: 2019-06-25 15:28:19.819000+00:00
 description: I talk thoroughbly and thoughtfully about buying a Raspberry Pi 4.... or not.
-category: Opinion
 tags:
-  - Raspberry Pi
-socialImage: 
+- Raspberry Pi
+socialImage: null
+url: /If you plan to have an informed decision to buy the new Raspberry Pi 4 by looking at the specs first and ponder the pros and cons first. Just don't. You don't need it. Just buy it./
+categories:
+- Opinion
 ---
 Raspberry Pi 4 is out. My advice? Buy it. Now. You will not regret it. It's garanteed.
 

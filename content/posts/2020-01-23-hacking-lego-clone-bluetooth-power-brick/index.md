@@ -3,12 +3,12 @@ template: post
 title: Hacking Lego Clone Bluetooth Power Brick
 slug: hacking-lego-clone-bluetooth-power-brick
 draft: true
-date: 2020-01-23T11:38:56.844Z
-description: >-
-  Hacking a Lego Clone Bluetooth Power Brick with the objective of controlling
-  it using an high level programming language like Python or Javacript
-category: tinkering4good
-socialImage: 
+date: 2020-01-23 11:38:56.844000+00:00
+description: Hacking a Lego Clone Bluetooth Power Brick with the objective of controlling it using an high level programming language like Python or Javacript
+socialImage: null
+url: /hacking-lego-clone-bluetooth-power-brick
+categories:
+- tinkering4good
 ---
 The Power Brick bluetooth device is apparently not being listed when scanning for devices via bluetooth. Either in Windows and in the Raspberry Pi. So it seems the Power Brick is in undiscoverable mode.
 

@@ -1,32 +1,32 @@
 ---
 template: post
-title: >-
-  A Vintage "Feel" 16 Segment 4 Digit Display To Use In Your Electronic
-  Creations  
+title: 'A Vintage "Feel" 16 Segment 4 Digit Display To Use In Your Electronic Creations  '
 slug: HPDL1414 Bubble 4 Digit 16 Segment Display Simplest Breadboard Test Circuit
 draft: false
-date: 2021-01-31T16:40:32.101Z
+date: 2021-01-31 16:40:32.101000+00:00
 description: HPDL1414 Bubble 4 Digit 16 Segment Display Simplest Breadboard Test Circuit
-category: Electronics
-socialImage: 
+socialImage: null
+url: /HPDL1414 Bubble 4 Digit 16 Segment Display Simplest Breadboard Test Circuit
+categories:
+- Electronics
 ---
 This is a very simple breadboard test circuit for th HPDL1414 Bubble 4 Digit 16 Segment Display.
 
 # Test Circuit
 
-![](/media/hpdl1414-photo-breadboard-circuit-web.jpg)
+![](media/hpdl1414-photo-breadboard-circuit-web.jpg)
 
-![](/media/hpdl1414-photo-bright-display.jpg)
+![](media/hpdl1414-photo-bright-display.jpg)
 
 ## Diagram
 
-![](/media/test-circuit-with-nanov3-and-hpdl1414-4-digit-bubble-led-16-segment-display.svg "Circuit Diagram for the breadboard test circuit for the HPDL1414 Bubble 4 Digit 16 Segment Display")
+![](media/test-circuit-with-nanov3-and-hpdl1414-4-digit-bubble-led-16-segment-display.svg "Circuit Diagram for the breadboard test circuit for the HPDL1414 Bubble 4 Digit 16 Segment Display")
 
 ## HPDL1414 Pins
 
-![](/media/hpdl1414-character-set.png)
+![](media/hpdl1414-character-set.png)
 
-![](/media/hpdl1414-pins.png)
+![](media/hpdl1414-pins.png)
 
 # References:
 

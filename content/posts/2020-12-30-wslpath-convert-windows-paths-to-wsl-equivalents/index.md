@@ -3,12 +3,12 @@ template: post
 title: 'wslpath - convert windows paths to wsl equivalents '
 slug: wslpath
 draft: false
-date: 2020-12-30T13:23:36.509Z
-description: >-
-  If working in WSL and need to convert a windows path to POSIX (Linux, WSL).
-  Use wslpath. 
-category: tips
-socialImage: 
+date: 2020-12-30 13:23:36.509000+00:00
+description: 'If working in WSL and need to convert a windows path to POSIX (Linux, WSL). Use wslpath. '
+socialImage: null
+url: /wslpath
+categories:
+- tips
 ---
 WSL is embeded in my workflow and an essential element of my toolbox alongside windows explorer and my IDEs: VS Code and Intellij IDEA. I use WSL for everything. From launching programs to search for strings in code or documents. It's my preferred way of launching apps. I even have an alias to docker.exe instead of using the linux docker command. 
 
