@@ -21,15 +21,15 @@ enableRobotsTXT = true
 [[menus.main]]
   name = "Articles"
   url = "/"
-  weight = 1
+  weight = 3
 [[menus.main]]
   name = "About me"
   url = "/pages/about"
-  weight = 2
+  weight = 1
 [[menus.main]]
   name = "Contact me"
   url = "/pages/contacts"
-  weight = 3
+  weight = 2
 
 [taxonomies]
   category = "categories"

@@ -9,29 +9,6 @@
       </div>
       <p class="author-subtitle">{{ .Site.Params.author.bio }}</p>
     </div>
-    <nav class="menu">
-      <ul>
-        {{ range .Site.Menus.main }}{{ if eq .Name "Articles" }}<li class="menu-articles">
-          <details class="articles-archive">
-            <summary><span class="menu-label">Articles</span><span class="archive-caret" aria-hidden="true">&#9662;</span></summary>
-            <div class="archive">
-              <p class="archive-latest"><a href="/">Latest articles</a></p>
-              {{ $posts := sort (where $.Site.RegularPages "Section" "posts") "Date" "desc" }}
-              <h4 class="archive-heading">By date</h4>
-              <ul class="archive-list archive-flat">
-                {{ range $posts.GroupByDate "2006-01" }}<li><a href="/articles/#{{ (index .Pages 0).Date.Format "January" | lower }}-{{ (index .Pages 0).Date.Format "2006" }}">{{ (index .Pages 0).Date.Format "January 2006" }}</a> <span class="archive-count">({{ len .Pages }})</span></li>{{ end }}
-              </ul>
-              <h4 class="archive-heading">By category</h4>
-              <ul class="archive-list archive-flat">
-                {{ range $.Site.Taxonomies.categories.Alphabetical }}<li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> <span class="archive-count">({{ .Count }})</span></li>{{ end }}
-              </ul>
-            </div>
-          </details>
-        </li>
-        {{ else }}<li><a href="{{ .URL }}"{{ if $page.IsMenuCurrent "main" . }} class="active"{{ end }}>{{ .Name }}</a></li>
-        {{ end }}{{ end }}
-      </ul>
-    </nav>
     <div class="contacts">
       <ul>
       <li><a href="mailto:{{ .Site.Params.author.email }}" aria-label="email"><svg viewBox="0 0 28 28" aria-hidden="true"><title>email</title><path d="M26 23.5v-12c-0.328 0.375-0.688 0.719-1.078 1.031-2.234 1.719-4.484 3.469-6.656 5.281-1.172 0.984-2.625 2.188-4.25 2.188h-0.031c-1.625 0-3.078-1.203-4.25-2.188-2.172-1.813-4.422-3.563-6.656-5.281-0.391-0.313-0.75-0.656-1.078-1.031v12c0 0.266 0.234 0.5 0.5 0.5h23c0.266 0 0.5-0.234 0.5-0.5zM26 7.078c0-0.391 0.094-1.078-0.5-1.078h-23c-0.266 0-0.5 0.234-0.5 0.5 0 1.781 0.891 3.328 2.297 4.438 2.094 1.641 4.188 3.297 6.266 4.953 0.828 0.672 2.328 2.109 3.422 2.109h0.031c1.094 0 2.594-1.437 3.422-2.109 2.078-1.656 4.172-3.313 6.266-4.953 1.016-0.797 2.297-2.531 2.297-3.859zM28 6.5v17c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-17c0-1.375 1.125-2.5 2.5-2.5h23c1.375 0 2.5 1.125 2.5 2.5z"/></svg></a></li>
@@ -44,6 +21,28 @@
       <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="mastodon"><svg viewBox="0 0 28 28" aria-hidden="true"><title>mastodon</title><path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/></svg></a></li>
       </ul>
     </div>
+    <nav class="menu">
+      <ul>
+        {{ range .Site.Menus.main }}{{ if eq .Name "Articles" }}<li class="menu-articles">
+          <details class="articles-archive">
+            <summary><span class="menu-label">Articles</span><span class="archive-caret" aria-hidden="true">&#9662;</span></summary>
+            <div class="archive">
+              {{ $posts := sort (where $.Site.RegularPages "Section" "posts") "Date" "desc" }}
+              <h4 class="archive-heading">By date</h4>
+              <ul class="archive-list archive-flat">
+                {{ range $posts.GroupByDate "2006-01" }}<li><a href="/articles/#{{ (index .Pages 0).Date.Format "January" | lower }}-{{ (index .Pages 0).Date.Format "2006" }}">{{ (index .Pages 0).Date.Format "Jan 2006" }}</a></li>{{ end }}
+              </ul>
+              <h4 class="archive-heading">By category</h4>
+              <ul class="archive-list archive-flat">
+                {{ range $.Site.Taxonomies.categories.Alphabetical }}<li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>{{ end }}
+              </ul>
+            </div>
+          </details>
+        </li>
+        {{ else }}<li><a href="{{ .URL }}"{{ if $page.IsMenuCurrent "main" . }} class="active"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}{{ end }}
+      </ul>
+    </nav>
     <div class="copyright">{{ .Site.Params.copyright }}</div>
   </div>
 </aside>
