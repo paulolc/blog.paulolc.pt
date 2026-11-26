@@ -17,17 +17,10 @@
 </head>
 <body>
 <script>(function(){var m;try{var p=JSON.parse(localStorage.getItem('diesel:theme-atom'));if(p&&p.mode)m=p.mode;}catch(e){}if(!m)m=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.classList.toggle('dark',m==='dark');})();</script>
-{{ if and (eq .Kind "page") (eq .Section "posts") }}
-<div class="post-layout">
-  <div class="post-buttons"><a class="button" href="/">All Articles</a><span class="theme-switcher"><button type="button" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode"><svg class="icon-sun" viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="icon-moon" viewBox="0 0 24 24" width="24" height="24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></span></div>
-  <main>{{ block "main" . }}{{ end }}</main>
-</div>
-{{ else }}
 <div class="layout">
 {{ partial "sidebar.html" . }}
 <main class="content">{{ block "main" . }}{{ end }}</main>
 </div>
-{{ end }}
 <script>document.querySelectorAll('[data-theme-toggle]').forEach(function(b){b.addEventListener('click',function(){var dark=document.documentElement.classList.toggle('dark');try{localStorage.setItem('diesel:theme-atom',JSON.stringify({mode:dark?'dark':'light'}));}catch(e){}});});</script>
 <script>
 if (window.netlifyIdentity) {

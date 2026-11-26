@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h1 class="articles-title">{{ .Title }}</h1>
+{{ $posts := sort (where site.RegularPages "Section" "posts") "Date" "desc" }}
+{{ with .Params.yearmonth }}{{ $ym := . }}{{ $f := slice }}{{ range $posts }}{{ if eq (.Date.Format "2006-01") $ym }}{{ $f = $f | append . }}{{ end }}{{ end }}{{ $posts = $f }}{{ end }}
+<div class="feed">
+{{ $paginator := .Paginate $posts }}
+{{ range $paginator.Pages }}{{ partial "post-item.html" . }}{{ end }}
+</div>
+<nav class="pagination">
+  <div class="prev">{{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}" rel="prev">&larr; PREV</a>{{ else }}<a class="disabled" href="{{ .RelPermalink }}" rel="prev">&larr; PREV</a>{{ end }}</div>
+  <div class="next">{{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}" rel="next">&rarr; NEXT</a>{{ else }}<a class="disabled" href="{{ .RelPermalink }}" rel="next">&rarr; NEXT</a>{{ end }}</div>
+</nav>
+{{ end }}

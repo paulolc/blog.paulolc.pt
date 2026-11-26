@@ -1,0 +1,21 @@
+{{ $months := dict }}
+{{ range os.ReadDir "content/posts" }}
+  {{ if .IsDir }}
+    {{ $path := printf "content/posts/%s/index.md" .Name }}
+    {{ if fileExists $path }}
+      {{ $raw := readFile $path }}
+      {{ $isDraft := findRE `(?m)^draft:\s*true` $raw }}
+      {{ if not $isDraft }}
+        {{ $m := findRE `(?m)^date:\s*"?[0-9]{4}-[0-9]{2}` $raw }}
+        {{ if $m }}
+          {{ $ym := replaceRE `(?s)^.*"?([0-9]{4}-[0-9]{2}).*$` "$1" (index $m 0) }}
+          {{ $months = merge $months (dict $ym true) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ range $ym, $_ := $months }}
+  {{ $label := (time.AsTime (printf "%s-01" $ym)).Format "January 2006" }}
+  {{ $.AddPage (dict "kind" "section" "path" $ym "title" $label "params" (dict "yearmonth" $ym)) }}
+{{ end }}
