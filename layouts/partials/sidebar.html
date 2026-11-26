@@ -24,7 +24,7 @@
     <nav class="menu">
       <ul>
         {{ range .Site.Menus.main }}{{ if eq .Name "Articles" }}<li class="menu-articles">
-          <details class="articles-archive">
+          <details class="articles-archive" open>
             <summary><span class="menu-label">Articles</span><span class="archive-caret" aria-hidden="true">&#9662;</span></summary>
             <div class="archive">
               {{ $posts := sort (where $.Site.RegularPages "Section" "posts") "Date" "desc" }}
